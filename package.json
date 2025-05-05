@@ -6,17 +6,27 @@
     "node": ">=22.0.0"
   },
   "scripts": {
+    "dev": "tsx watch --env-file=.env src/infra/http/server.ts",
     "test": "vitest run",
-    "test:cov": "vitest run --coverage"
+    "test:cov": "vitest run --coverage",
+    "generate": "drizzle-kit generate",
+    "migrate": "bun src/db/migrate.ts"
   },
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@paralleldrive/cuid2": "^2.2.2"
+    "@paralleldrive/cuid2": "^2.2.2",
+    "drizzle-orm": "^0.43.1",
+    "fastify": "^5.3.2",
+    "pg": "^8.15.6",
+    "postgres": "^3.4.5"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
+    "@types/pg": "^8.11.14",
+    "drizzle-kit": "^0.31.1",
     "swc": "^1.0.11",
+    "tsx": "^4.19.4",
     "typescript": "^5.8.3",
     "unplugin-swc": "^1.5.2",
     "vite-tsconfig-paths": "^5.1.4",

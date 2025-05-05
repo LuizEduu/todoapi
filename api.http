@@ -1,0 +1,10 @@
+POST http://localhost:3000/tasks
+content-type: application/json
+
+{
+    "name": "estudar AWS amanhã",
+    "description": "Estudar para a certificação AWS",
+    "status": "PENDING",
+    "ownerId": "1"
+}
+###
