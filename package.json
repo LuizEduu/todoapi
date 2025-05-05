@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage"
+  },
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "swc": "^1.0.11",
+    "typescript": "^5.8.3",
+    "unplugin-swc": "^1.5.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.2"
+  }
+}
