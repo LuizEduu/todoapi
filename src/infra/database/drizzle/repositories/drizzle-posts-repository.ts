@@ -2,6 +2,7 @@ import { TaskRepository } from '@/domain/application/repositories/task-repositor
 import { Task } from '@/domain/enterprise/entities/task';
 import { tasksSchema } from '@/db/schema/tasks';
 import { db } from '../drivers/postgres';
+import { DrizzleTaskMapper } from '../../mapper/drizzle-task-mapper';
 
 export class DrizzleTasksRepository implements TaskRepository {
   async create(task: Task): Promise<void> {
@@ -11,7 +12,13 @@ export class DrizzleTasksRepository implements TaskRepository {
       description: task.description,
       status: task.status,
       ownerId: task.ownerId.toString(),
-      createdAt: task.createdAt.toISOString(),
+      createdAt: task.createdAt.toString(),
     });
+  }
+
+  async findAll(): Promise<Task[]> {
+    const tasks = await db.select().from(tasksSchema);
+
+    return tasks.map((task) => DrizzleTaskMapper.toDomain(task));
   }
 }

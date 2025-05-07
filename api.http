@@ -8,3 +8,5 @@ content-type: application/json
     "ownerId": "1"
 }
 ###
+
+GET http://localhost:3000/tasks

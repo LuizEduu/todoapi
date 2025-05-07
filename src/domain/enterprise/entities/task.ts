@@ -7,7 +7,7 @@ interface TaskProps {
   description: string;
   status: string;
   ownerId: UniqueEntityID;
-  createdAt: Date;
+  createdAt: Date | string;
 }
 
 export class Task extends Entity<TaskProps> {
@@ -43,7 +43,7 @@ export class Task extends Entity<TaskProps> {
     this.props.ownerId = value;
   }
 
-  get createdAt(): Date {
+  get createdAt(): Date | string {
     return this.props.createdAt;
   }
 

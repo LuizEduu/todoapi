@@ -1,4 +1,4 @@
-import { makeRegisterTaskUseCase } from '@/infra/factories/make-create-post-use-case';
+import { makeRegisterTaskUseCase } from '@/infra/factories/make-register-task-use-case';
 import { FastifyInstance, FastifyRequest } from 'fastify';
 
 interface CreateTaskBody {
@@ -8,7 +8,7 @@ interface CreateTaskBody {
   ownerId: string;
 }
 
-export async function createPostRoute(fastify: FastifyInstance) {
+export async function registerTaskRoute(fastify: FastifyInstance) {
   fastify.post(
     '/tasks',
     async (request: FastifyRequest<{ Body: CreateTaskBody }>, reply) => {
